@@ -14,18 +14,26 @@ const weatherOptions = {
   Thunderstorm: {
     iconName: "weather-lightning",
     gradient: ["#373B44", "#4286f4"],
+    title: "Thunderstorm in the house",
+    subtitle: "Actually, outside of the house",
   },
   Rain: {
     iconName: "weather-rainy",
     gradient: ["#00C6FB", "#005BEA"],
+    title: "Raining like a MF",
+    subtitle: "For more info look outside",
   },
   Atmosphere: {
     iconName: "weather-cloudy",
     gradient: ["#D7D2CC", "#304352"],
+    title: "Cold as balls",
+    subtitle: "Do you want to build a snowman? Fuck no.",
   },
   Clear: {
     iconName: "weather-sunny",
     gradient: ["#FF7300", "#FEF253"],
+    title: "Sunny as fuck",
+    subtitle: "Go get your ass burnt",
   },
 };
 
