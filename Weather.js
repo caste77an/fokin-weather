@@ -8,22 +8,24 @@ const weatherOptions = {
   Clouds: {
     iconName: "weather-hail",
     gradient: ["#4DA0b0", "#D39D38"],
+    title: "Today is Clouds",
+    subTitle: "Let's go picnic",
   },
   Thunderstorm: {
-    iconName: "weather-hail",
-    gradient: ["#4DA0b0", "#D39D38"],
+    iconName: "weather-lightning",
+    gradient: ["#373B44", "#4286f4"],
   },
   Rain: {
-    iconName: "weather-hail",
-    gradient: ["#4DA0b0", "#D39D38"],
+    iconName: "weather-rainy",
+    gradient: ["#00C6FB", "#005BEA"],
   },
   Atmosphere: {
-    iconName: "weather-hail",
-    gradient: ["#4DA0b0", "#D39D38"],
+    iconName: "weather-cloudy",
+    gradient: ["#D7D2CC", "#304352"],
   },
   Clear: {
-    iconName: "weather-hail",
-    gradient: ["#4DA0b0", "#D39D38"],
+    iconName: "weather-sunny",
+    gradient: ["#FF7300", "#FEF253"],
   },
 };
 
@@ -42,7 +44,12 @@ export default function Weather({ temp, condition }) {
         />
         <Text style={styles.temp}>{Math.round(temp)}℃</Text>
       </View>
-      <View style={styles.halfContainer} />
+      <View style={{ ...styles.halfContainer, ...styles.textContainer }}>
+        <Text style={styles.title}>{weatherOptions[condition].title}</Text>
+        <Text style={styles.subTitle}>
+          {weatherOptions[condition].subTitle}
+        </Text>
+      </View>
     </LinearGradient>
   );
 }
@@ -74,5 +81,20 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
+  },
+  title: {
+    color: "white",
+    fontSize: 44,
+    fontWeight: "300",
+    marginBottom: 10,
+  },
+  subTitle: {
+    color: "white",
+    fontWeight: "600",
+    fontSize: 24,
+  },
+  textContainer: {
+    paddingHorizontal: 20,
+    alignItems: "flex-start",
   },
 });
